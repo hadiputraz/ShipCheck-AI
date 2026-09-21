@@ -1,0 +1,27 @@
+.venv/
+.venv-1/
+
+__pycache__/
+*.pyc
+.pytest_cache/
+
+.env
+*.key
+*.pem
+*.p12
+*.pfx
+
+.office-addin-dev-certs/
+
+output/
+*.log
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Hackathon dataset - do not upload unless permitted
+sdoc-hackathon-bundle/
+
+data/

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShipCheck AI</title>
+    <link rel="stylesheet" href="taskpane.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="header">
+            <div class="brand">
+                <div class="logo">SC</div>
+                <div>
+                    <h1>ShipCheck AI</h1>
+                    <p>Shipping Document Verification</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+
+            <section class="email-card">
+                <div class="section-label">DEMO EMAIL</div>
+
+                <label for="emailId">Email ID</label>
+
+                <div class="input-row">
+                    <input
+                        type="text"
+                        id="emailId"
+                        value="email_001"
+                        placeholder="e.g. email_001"
+                    >
+
+                    <button id="analyzeBtn">
+                        Analyze
+                    </button>
+                </div>
+
+                <p class="hint">
+                    Enter an email ID from the ShipCheck AI dataset.
+                </p>
+            </section>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <span>Analyzing shipping documents...</span>
+            </div>
+
+            <section id="result" class="result hidden">
+
+                <div id="statusCard" class="status-card">
+
+                    <div class="status-icon" id="statusIcon">✓</div>
+
+                    <div>
+                        <div class="status-title" id="statusTitle">
+                            No Mismatch Detected
+                        </div>
+
+                        <div class="status-description" id="statusDescription">
+                            All required fields match.
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="summary-grid">
+
+                    <div class="summary-item">
+                        <span>Category</span>
+                        <strong id="category">-</strong>
+                    </div>
+
+                    <div class="summary-item">
+                        <span>Confidence</span>
+                        <strong id="confidence">-</strong>
+                    </div>
+
+                    <div class="summary-item">
+                        <span>SI</span>
+                        <strong id="siType">-</strong>
+                    </div>
+
+                    <div class="summary-item">
+                        <span>Draft BL</span>
+                        <strong id="blType">-</strong>
+                    </div>
+
+                </div>
+
+                <div id="mismatchSection" class="section hidden">
+
+                    <div class="section-title">
+                        Mismatched Fields
+                    </div>
+
+                    <div id="mismatchList"></div>
+
+                </div>
+
+                <div id="fieldsSection" class="section">
+
+                    <div class="section-title">
+                        Document Comparison
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Shipping Instruction</th>
+                                    <th>Draft BL</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="fieldsTable">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+                <div id="reviewReason" class="review-reason hidden">
+                    <strong>Reason for review</strong>
+                    <p id="reviewText"></p>
+                </div>
+
+            </section>
+
+            <div id="error" class="error hidden">
+                <strong>Analysis failed</strong>
+                <p id="errorText"></p>
+            </div>
+
+        </main>
+
+        <footer>
+            ShipCheck AI • Shipping Document Verification
+        </footer>
+
+    </div>
+
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>`r`n    <script src="taskpane.js"></script>
+
+</body>
+</html>
+
